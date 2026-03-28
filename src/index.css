@@ -32,12 +32,20 @@
   * {
     border-color: var(--color-gray-200);
   }
+  html {
+    height: 100%;
+  }
   body {
     font-family: var(--font-family-sans);
     background-color: var(--color-gray-50);
     color: var(--color-gray-900);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    min-height: 100%;
+    min-height: 100dvh;
+    /* iOS standalone / black-translucent: keep content out from under notch & home indicator */
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px)
+      env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
   }
 }
 
